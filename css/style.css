@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ROOT */
+
+:root {
+    
+    /* Logo */
+    --logo-height: 1em;
+
+    /* Color */
+    --golden : #c59d5f;
+    --white :#fff;
+
+    /* Transition */
+    --smooth : 0.8s;
+
+}
+
+/* UNIVERSAL SELECT */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald";    
+}
+
+/* MENU */
+    /* Navbar */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+    width: 100%;
+    position: fixed;
+    padding: 1em 2em;
+    background: rgba(0, 0, 0, 0.6);
+
+}
+    /* Logo */
+.logo img{
+    height: var(--logo-height);
+}
+    /* Links */
+.navbar-links a,
+.navbar-links li {
+    margin: 0.5em;
+    display: inline;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.navbar-links a:hover {
+    color: var(--golden);
+    transition: var(--smooth);
+
+}
+
+/* MAIN */
+
+#main {
+    min-height: 100vh;
+}
+    /* FIRST SECTION */
+
+#first-section {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+#section-image img {
+    width: 100%;
+    height: 100%;
+    display: block; /* Permet de prendre tout l'espace du bloc pour l'image*/
+    object-fit: cover;
+}
+
+#section-logo {
+    top: 23%;
+    position: absolute;
+}
+
+#quote-text {
+    width: 100%;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    background: var(--golden);
+}
+
+#quote-text h1 {
+    color: var(--white);
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+    /* TRADITION SECTION */
+#tradition-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.tradition-section-text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1.5em;
+}
+
+.tradition-section-img {
+    position: relative;
+}
+
+.tradition-section-logo {
+    position: absolute;
+
+}
