@@ -10,6 +10,7 @@
 
     /* Color */
     --golden : #c59d5f;
+    --lightgold : #ecc68b;
     --white :#fff;
 
     /* Transition */
@@ -24,6 +25,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Oswald";    
+    vertical-align: top ;
 }
 
 /* MENU */
@@ -50,12 +52,11 @@
     display: inline;
     color: var(--white);
     text-decoration: none;
+    transition: var(--smooth);
 }
 
 .navbar-links a:hover {
     color: var(--golden);
-    transition: var(--smooth);
-
 }
 
 /* MAIN */
@@ -75,7 +76,7 @@
 #section-image img {
     width: 100%;
     height: 100%;
-    display: block; /* Permet de prendre tout l'espace du bloc pour l'image*/
+    display: block; /* Permet de prendre tout l'espace du bloc pour l'image */
     object-fit: cover;
 }
 
@@ -99,10 +100,13 @@
 }
 
     /* TRADITION SECTION */
+
 #tradition-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
+        /* Tradition text */
 
 .tradition-section-text {
     display: flex;
@@ -112,11 +116,76 @@
     margin: 1.5em;
 }
 
+.tradition-section-text h2 {
+    font-size: 3em;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.tradition-section-text h3 {
+    font-family: 'Times New Roman';
+    font-style: italic;
+    font-size: 1em;
+}
+
+.tradition-section-text p {
+    font-family: "Raleway";
+    text-align: center;
+    padding: 1.5em 5em;
+}
+
+        /* Tradition images */
+
 .tradition-section-img {
     position: relative;
+    width: 100%;
 }
+
+        /* Tadition logo */
 
 .tradition-section-logo {
     position: absolute;
+    top: 2em;
+    left: 18em;
+}
+
+        /* Tadition button */
+
+.tradition-section-btn {
+    background-color:var(--golden);
+    color: var(--white);
+    border: none;
+    padding: 1em 3.5em;
+    border-radius: 0.4em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: var(--smooth);
+}
+
+.tradition-section-btn:hover {
+    background-color: var(--lightgold);
+}
+
+    /* GALLERY SECTION */
+
+#gallery-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-section-img {
+    position: relative;
+}
+
+.gallery-section-img:hover {
+    opacity: 1;
+}
+
+.gallery-plus {
+    position: absolute;
+    color: var(--white);
+    top: 10%;
+    left: 10%;
 
 }
