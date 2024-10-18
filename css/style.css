@@ -4,55 +4,70 @@
 /* ROOT */
 
 :root {
-    
+
     /* Logo */
     --logo-height: 1em;
 
     /* Color */
     --golden : #c59d5f;
     --lightgold : #ecc68b;
+    --lightgold-tp : #ecc58bb7;
     --white :#fff;
+    --black : #000;
 
     /* Transition */
     --smooth : 0.8s;
-
 }
 
-/* UNIVERSAL SELECT */
+/* SELECTION */
+
+::-moz-selection {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+::selection {
+background-color: var(--black);
+color: var(--white);
+}
+
+/* UNIVERSAL SELECTOR */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Oswald";    
-    vertical-align: top ;
 }
 
 /* MENU */
     /* Navbar */
+
 #navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 3;
     width: 100%;
+    font-size: 1em;
     position: fixed;
-    padding: 1em 2em;
+    padding: 2.5em 3em;
+    transition: var(--smooth);
     background: rgba(0, 0, 0, 0.6);
-
 }
     /* Logo */
+
 .logo img{
     height: var(--logo-height);
 }
     /* Links */
+
 .navbar-links a,
 .navbar-links li {
-    margin: 0.5em;
+    margin: 0.8em;
     display: inline;
     color: var(--white);
     text-decoration: none;
-    transition: var(--smooth);
 }
 
 .navbar-links a:hover {
@@ -61,131 +76,214 @@
 
 /* MAIN */
 
-#main {
+main {
+    max-width: 100vw;
     min-height: 100vh;
-}
-    /* FIRST SECTION */
-
-#first-section {
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
-#section-image img {
+main h1, 
+main h2{
+    text-transform: uppercase;
+}
+
+main h2{
+    font-family: "Raleway";
+}
+
+main h3 {
+    font-style:italic ;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+main p {
+    font-weight: 300;
+}
+
+main img {
     width: 100%;
     height: 100%;
     display: block; /* Permet de prendre tout l'espace du bloc pour l'image */
     object-fit: cover;
 }
 
-#section-logo {
-    top: 23%;
-    position: absolute;
-}
+/* QUOTE */
 
-#quote-text {
-    width: 100%;
-    bottom: 0px;
-    display: flex;
-    justify-content: center;
-    background: var(--golden);
-}
-
-#quote-text h1 {
+.quote {
     color: var(--white);
-    font-size: 2em;
-    text-transform: uppercase;
+    background-color: var(--golden);
+    font-size: 2.7em;
+    padding: 1.5em;
+    line-height: 1.5em; /* Permet de réduire l'interligne */
 }
 
-    /* TRADITION SECTION */
+/* GRID */
 
-#tradition-section {
+.grid-container {
     display: grid;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#grid-double {
     grid-template-columns: repeat(2, 1fr);
 }
 
-        /* Tradition text */
-
-.tradition-section-text {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1.5em;
-}
-
-.tradition-section-text h2 {
-    font-size: 3em;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-.tradition-section-text h3 {
-    font-family: 'Times New Roman';
-    font-style: italic;
-    font-size: 1em;
-}
-
-.tradition-section-text p {
-    font-family: "Raleway";
-    text-align: center;
-    padding: 1.5em 5em;
-}
-
-        /* Tradition images */
-
-.tradition-section-img {
-    position: relative;
-    width: 100%;
-}
-
-        /* Tadition logo */
-
-.tradition-section-logo {
-    position: absolute;
-    top: 2em;
-    left: 18em;
-}
-
-        /* Tadition button */
-
-.tradition-section-btn {
-    background-color:var(--golden);
-    color: var(--white);
-    border: none;
-    padding: 1em 3.5em;
-    border-radius: 0.4em;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-size: 1.2em;
-    transition: var(--smooth);
-}
-
-.tradition-section-btn:hover {
-    background-color: var(--lightgold);
-}
-
-    /* GALLERY SECTION */
-
-#gallery-section {
-    display: grid;
+#grid-four {
     grid-template-columns: repeat(4, 1fr);
 }
 
-.gallery-section-img {
-    position: relative;
+.grid-item {
+    display: grid;
+    align-items: center;
+    padding: 5em;
 }
 
-.gallery-section-img:hover {
+.grid-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.grid-text h2 {
+    margin: 0.2em;
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.grid-text p {
+    margin: 2em;
+}
+
+/* IMAGES */
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.image-main {
+    width: 100%;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: auto;
+}
+
+.overlay-plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    background: var(--lightgold-tp);
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    opacity: 0;
+    transition: var(--smooth);
+}
+
+.overlay-plus i {
+    color: white;
+    font-size: 6rem;
+}
+
+.icon-overlay:hover{
     opacity: 1;
 }
 
-.gallery-plus {
-    position: absolute;
-    color: var(--white);
-    top: 10%;
-    left: 10%;
+.services-container {
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.services-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 25%;
+    padding: 2em;
+}
+
+.services-item:hover h2{
+    color: var(--golden);
+    transition: var(--smooth);
+}
+
+.services-image {
+    margin: 20px;
+}
+
+.services-text p {
+    padding: 0.5em 2em;
+}
+
+/* BUTTONS */
+
+.btn {
+    cursor: pointer;
+    padding: 0.8em 2em;
+    border-radius: 0.5em;
+    margin: 1.5em 18em;
+    text-transform: uppercase;
+}
+
+.gold-btn {
+    
+    border: none;
+    font-size: 1em;
+    color: var(--white);
+    transition: var(--smooth);
+    background-color: var(--golden);
+}
+
+.gold-btn:hover {
+    background-color: var(--lightgold);
+}
+
+/* ANIMATIONS */
+
+.scale {
+    min-width: 25%;
+}
+
+.scale:hover .overlay-plus {
+    opacity: 1;
+}
+
+/* MAP */
+
+.map iframe{
+    width: 100%;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: rgb(0, 0, 0);
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MEDIA QUERIES */
+
+
+@media only screen and (max-width:960px) {
+    #grid-double {
+        grid-template-columns: 1fr;
+    }
+}
+
