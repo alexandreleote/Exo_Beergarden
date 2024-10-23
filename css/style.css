@@ -10,6 +10,7 @@
     --lightgold-tp : #ecc58bb7;
     --white :#fff;
     --black : #000;
+    --background : rgba(0, 0, 0, 0.6);
 
     /* Transitions */
     --smooth : 0.8s;
@@ -45,12 +46,12 @@
     width: 100%;
     display: flex;
     padding: 20px;
-    font-size: clamp(.25rem, 1vw + .5rem, 2rem);
     position: fixed;
     align-items: center;
     text-transform: uppercase;
     justify-content: space-between;
-    background: rgba(0, 0, 0, 0.6);
+    background: var(--background);
+    font-size: clamp(.25rem, 1vw + .5rem, 2rem);
 }
 /* Logo */
 
@@ -60,21 +61,59 @@
 }
 /* Links */
 
-.navbar-links a,
-.navbar-links li {
+#menu .navbar-social a,
+#menu .navbar-links a,
+#menu .navbar-links li {
     margin: 10px;
     display: inline;
     color: var(--white);
     text-decoration: none;
 }
 
-.navbar-links a:hover {
+#menu .navbar-social a:hover,
+#menu .navbar-links a:hover {
     color: var(--golden);
     transition: var(--smooth);
 }
 
 /* Burger Menu */
 
+.menu-burger {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+}
+
+.menu-burger:hover .fa-bars,
+.menu-burger:hover .fa-close{
+    color: var(--golden);
+    transition: var(--smooth);
+}
+
+#menu {
+    display: none;
+}
+  
+#menu.active {
+    display: block;
+    margin-top: 20px;
+}
+
+#menu.active li {
+    display: flex;
+    flex-direction: column;
+}
+
+#menu.active .navbar-links a,
+#menu.active .navbar-social {
+    margin: 0;
+    transform: translateX(-50%);
+}
+
+.fa-bars, .fa-close {
+    color: var(--white);
+}
 
 /* MAIN */
 
@@ -200,8 +239,8 @@ main img {
 }
 
 .overlay-plus i {
-    color: white;
     font-size: 6rem;
+    color: var(--white);
 }
 
 /* BUTTONS */
@@ -248,8 +287,8 @@ main img {
 
 .services-image {
     margin: 20px;
-    position: relative;
     overflow: hidden;
+    position: relative;
 }
 
 .services-overlay {
@@ -469,8 +508,22 @@ main img {
         font-size: clamp(.15rem, 5.5vw + .5rem, 1.25rem);
     }
 
-    #burger-btn {
+    .menu-burger {
         display: none;
+    }
+
+/*     nav {
+        border: 1px blue solid;
+    } */
+
+    #menu {
+        display: flex;
+/*         border: 1px red solid; */
+    }
+
+    #menu a:hover {
+        color: var(--lightgold);
+        transition: var(--smooth);
     }
 
     .grid-item {
@@ -504,5 +557,22 @@ main img {
 
     .parallax {
         height: 20vh;
+    }
+}
+
+@media only screen and (min-width:1461px) {
+    .menu-burger {
+        display: none;
+    }
+    
+    #menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #menu a:hover {
+        color: var(--lightgold);
+        transition: var(--smooth);
     }
 }
