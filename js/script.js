@@ -16,8 +16,8 @@ menuBurger.addEventListener("click", () => {
 }) */
 
 const burger = document.querySelector(".menu-burger");
-const navLinks = document.querySelector(".navbar-links");
+const navMenuMobile = document.querySelector(".navbar-menu-mobile");
 
 burger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    navMenuMobile.classList.toggle('active')  
 })

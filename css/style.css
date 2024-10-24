@@ -5,16 +5,15 @@
 :root {
 
     /* Colors */
+    --white :#fff;
+    --black : #000;
     --golden : #a7681b;
     --lightgold : #84643e;
     --lightgold-tp : #84653ed5;
-    --white :#fff;
-    --black : #000;
     --background : rgba(0, 0, 0, 0.6);
 
     /* Transitions */
-    --smooth : 0.8s;
-    --smooth-transform: transform var(--smooth) ease-in-out;
+    --smooth: 0.8s ease-in-out;
 }
 
 /* SELECTION */
@@ -63,11 +62,13 @@ nav h1{
 
 /* Links */
 
+.navbar-socials,
 .navbar-links {
     display: flex;
     list-style: none;
 }
 
+.navbar-socials li a,
 .navbar-links li a{
     text-decoration: none;
 }
@@ -82,7 +83,55 @@ nav h1{
     transition: var(--smooth);
 }
 
+/* Socials */
+
+.navbar-socials a {
+    margin: 10px;
+}
+
+.Twitter {
+    color: var(--white);
+}
+
+.Twitter:hover {
+    background: linear-gradient(45deg, #111111, #14171a, #aab8c2, #e1e8ed, #f5f8fa );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: var(--smooth);
+}
+
+.Facebook {
+    margin: 10px;
+    color: var(--white);
+}
+
+.Facebook:hover {
+    background: linear-gradient(45deg, #1877f2, #3b5998);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: var(--smooth);
+}
+
+.Instagram {
+    color: var(--white);
+}
+
+.Instagram:hover {
+    background: linear-gradient(45deg, #c32aa3, #4c5fd7, #7232bd, #f46f30, #ffdc7d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: var(--smooth);
+}
+
 /* Burger Menu */
+
+/*  On masque de base le menu mobile pour n'afficher que le menu prévu */
+.navbar-menu-mobile {
+    display: none;
+}
 
 .menu-burger {
     width: 30px;
@@ -100,8 +149,8 @@ nav h1{
 }
 
 .menu-burger:hover .line {
-    background-color: var(--golden);
     transition: var(--smooth);
+    background-color: var(--golden);
 }
 
 /* MAIN */
@@ -224,7 +273,7 @@ main img {
     align-items: center;
     justify-content: center;
     background: var(--lightgold-tp);
-    transition: var(--smooth-transform);
+    transition: var(--smooth);
 }
 
 .overlay-plus i {
@@ -311,7 +360,7 @@ main img {
 
 .scale:hover img{
     transform: scale(1.1);
-    transition: var(--smooth-transform);
+    transition: var(--smooth);
 }
 
 .scale:hover .overlay-plus {
@@ -320,19 +369,18 @@ main img {
 
 .overlay-plus:hover i {
     transform: rotate(360deg);
-    transition: var(--smooth-transform);
+    transition: var(--smooth);
 }
 
 /* PARALLAX */
 
 .parallax {
-    height: 40vh;
-    background-attachment: fixed;
-    background-position: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
     z-index: 1;
+    height: 40vh;
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .parallax-img {
@@ -429,22 +477,33 @@ main img {
         font-size: clamp(.15rem, 5.5vw + .25rem, 1.25rem);
     }
 
-    .navbar-links {
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-menu-mobile {
+        gap: 10px; /* On ajoute un peu d'espace entre les liens du menu et les réseaux sociaux */        
         top: 70px;
         width: 100%;
         display: none;
         padding: 0 0 20px;
+        text-align: center;
         position: absolute;
         align-items: center;
         flex-direction: column;
+        justify-content: center;
         background-color: var(--background);
+    }
+
+    .navbar-links {
+        flex-direction: column;
     }
 
     .menu-burger {
         display: flex;
     }
 
-    .navbar-links.active {
+    .navbar-menu-mobile.active {
         display: flex;
     }
 
@@ -500,23 +559,34 @@ main img {
     nav h1 {
         font-size: clamp(.15rem, 5.5vw + .25rem, 1.25rem);
     }
+    
+    .navbar-menu {
+        display: none;
+    }
 
-    .navbar-links {
+    .navbar-menu-mobile {
+        gap: 10px; /* On ajoute un peu d'espace entre les liens du menu et les réseaux sociaux */        
         top: 70px;
         width: 100%;
         display: none;
         padding: 0 0 20px;
+        text-align: center;
         position: absolute;
         align-items: center;
         flex-direction: column;
+        justify-content: center;
         background-color: var(--background);
     }
-    
+
+    .navbar-links {
+        flex-direction: column;
+    }
+
     .menu-burger {
         display: flex;
     }
-    
-    .navbar-links.active {
+
+    .navbar-menu-mobile.active {
         display: flex;
     }
 
@@ -573,30 +643,38 @@ main img {
         font-size: clamp(.15rem, 5.5vw + .5rem, 1.25rem);
     }
 
-    .navbar-links {
+    nav a {
+        font-size: 1.2em;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+
+    .navbar-menu-mobile {
+        gap: 10px; /* On ajoute un peu d'espace entre les liens du menu et les réseaux sociaux */        
         top: 70px;
         width: 100%;
         display: none;
         padding: 0 0 20px;
+        text-align: center;
         position: absolute;
+        align-items: center;
         flex-direction: column;
+        justify-content: center;
         background-color: var(--background);
     }
 
-    .navbar-links li {
-        text-align: center;
-    }
-
-    .navbar-links li:hover {
-        height: 30px;
-        background-color: rgba(0, 0, 0, 0.8);
+    .navbar-links {
+        flex-direction: column;
     }
 
     .menu-burger {
         display: flex;
     }
-    
-    .navbar-links.active {
+
+    .navbar-menu-mobile.active {
         display: flex;
     }
 
@@ -691,7 +769,6 @@ main img {
         font-size: clamp(.15rem, 5.5vw + .5rem, 1.25rem);
     }
 
-
     .grid-item {
         padding: 2.5em;
     }
@@ -730,5 +807,6 @@ main img {
     .menu-burger {
         display: none;
     }
-    
+
+
 }
