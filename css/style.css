@@ -3,13 +3,13 @@
 /* ROOT */
 
 :root {
-
+    
     /* Colors */
     --white :#fff;
     --black : #000;
-    --golden : #a7681b;
-    --lightgold : #84643e;
-    --lightgold-tp : #84653ed5;
+    --primary : #744a1a;
+    --secondary : #b0551c;
+    --secondary-tp : #b0551c93;
     --background : rgba(0, 0, 0, 0.6);
 
     /* Transitions */
@@ -56,11 +56,18 @@ nav {
 /* Logo */
 
 nav h1{
-    font-size: clamp(.25rem, 7.5vw + .5rem, 2.5rem);
     color: var(--white);
+    font-size: clamp(.25rem, 7.5vw + .5rem, 2.5rem);
 }
 
 /* Links */
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
 
 .navbar-socials,
 .navbar-links {
@@ -74,12 +81,12 @@ nav h1{
 }
 
 .navbar-links a {
-    margin: 10px;
+    margin: 15px;
     color: var(--white);
 }
 
 .navbar-links a:hover {
-    color: var(--golden);
+    color: #808080;
     transition: var(--smooth);
 }
 
@@ -150,7 +157,7 @@ nav h1{
 
 .menu-burger:hover .line {
     transition: var(--smooth);
-    background-color: var(--golden);
+    background-color: var(--primary);
 }
 
 /* MAIN */
@@ -193,7 +200,7 @@ main img {
     color: var(--white);
     align-items: center;
     justify-content: center;
-    background-color: var(--golden);
+    background-color: var(--primary);
 }
 
 #quote h2 {
@@ -272,7 +279,7 @@ main img {
     position: absolute;
     align-items: center;
     justify-content: center;
-    background: var(--lightgold-tp);
+    background: var(--secondary-tp);
     transition: var(--smooth);
 }
 
@@ -296,13 +303,13 @@ main img {
     border: none;
     font-size: 0.8em;
     color: var(--white);
-    background-color: var(--golden);
+    background-color: var(--primary);
 }
 
 .gold-btn:hover {
     transition: var(--smooth);
-    background-color: var(--lightgold);
-    box-shadow: 6px 6px 5px #292929 ;
+    background-color: var(--secondary);
+    box-shadow: 4px 4px 5px #292929 ;
 }
 
 /* SERVICES */
@@ -320,7 +327,7 @@ main img {
 }
 
 .services-item:hover h2 {
-    color: var(--golden);
+    color: var(--primary);
     transition: var(--smooth);
 }    
 
@@ -339,7 +346,7 @@ main img {
     height: 100%;
     position: absolute;
     border-radius: 5em;
-    background: linear-gradient(0.5turn, var(--white), var(--golden));
+    background: linear-gradient(0.5turn, var(--white), var(--primary));
 }
 
 .services-item:hover .services-overlay {
