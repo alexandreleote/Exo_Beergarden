@@ -94,24 +94,23 @@ nav h1{
 }
 
 .Twitter:hover {
-    background: linear-gradient(45deg, #111111, #14171a, #aab8c2, #e1e8ed, #f5f8fa );
-    -webkit-background-clip: text;
-    background-clip: text;
     color: transparent;
+    background-clip: text;
     transition: var(--smooth);
+    -webkit-background-clip: text;
+    background: linear-gradient(45deg, #111111, #14171a, #aab8c2, #e1e8ed, #f5f8fa );
 }
 
 .Facebook {
-    margin: 10px;
     color: var(--white);
 }
 
 .Facebook:hover {
-    background: linear-gradient(45deg, #1877f2, #3b5998);
-    -webkit-background-clip: text;
-    background-clip: text;
     color: transparent;
+    background-clip: text;
     transition: var(--smooth);
+    -webkit-background-clip: text;
+    background: linear-gradient(45deg, #1877f2, #3b5998);
 }
 
 .Instagram {
@@ -119,11 +118,11 @@ nav h1{
 }
 
 .Instagram:hover {
-    background: linear-gradient(45deg, #c32aa3, #4c5fd7, #7232bd, #f46f30, #ffdc7d);
-    -webkit-background-clip: text;
-    background-clip: text;
     color: transparent;
+    background-clip: text;
     transition: var(--smooth);
+    -webkit-background-clip: text;
+    background: linear-gradient(45deg, #c32aa3, #4c5fd7, #7232bd, #f46f30, #ffdc7d);
 }
 
 /* Burger Menu */
