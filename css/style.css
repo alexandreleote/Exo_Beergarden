@@ -456,14 +456,9 @@ main img {
     background: linear-gradient(#000 10%, #00000000, #000 80%);
 }
 
-.map-main  {
-    background: #000;
-    filter: grayscale(1);
-}
-
 .map-container iframe {
     width: 100%;
-    filter:invert(1);
+    filter:invert(1) grayscale(1);
 }
 
 .map-cursor {
