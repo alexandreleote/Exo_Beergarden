@@ -1,23 +1,9 @@
-/* 
-const menuBurger = document.querySelector(".menu-burger")
-const mobileMenu = document.querySelector("#menu")
-
-menuBurger.addEventListener("click", () => {
-
-    mobileMenu.classList.toggle('active')
-
-    if(menuBurger.querySelector('i').classList.contains('fa-bars')) {
-        menuBurger.querySelector('i').classList.remove('fa-bars')
-        menuBurger.querySelector('i').classList.add('fa-close')
-    } else { 
-        menuBurger.querySelector('i').classList.add('fa-bars')
-        menuBurger.querySelector('i').classList.remove('fa-close')
-    }
-}) */
-
+/* Selection of the burger menu */
 const burger = document.querySelector(".menu-burger");
 const navMenuMobile = document.querySelector(".navbar-menu-mobile");
 
+/* AddEventListener on click to toggle the display of the links inside the menu */
 burger.addEventListener('click', () => {
-    navMenuMobile.classList.toggle('active')  
+    navMenuMobile.classList.toggle('active');  
+    burger.classList.toggle('open');
 })
