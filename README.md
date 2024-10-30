@@ -1,6 +1,6 @@
 Exercice The Beer Garden :
 
-Reproduire une page d'accueil en HTML / CSS 
+Reproduire une page d'accueil en HTML / CSS <br>
 Penser au responsive design avec des media queries, adapté à plusieurs tailles d'écran
 
 Utilisation d'un Menu Burger, de mediqa queries, optimisation des images au format WEBP, attention portée sur l'accessibilité du site et coordination des couleurs en conséquence
