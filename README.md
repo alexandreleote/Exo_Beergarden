@@ -1,4 +1,3 @@
-
 # Projet The Beer Garden - Site Web Responsive
 
 ## 📋 Contexte du projet
@@ -76,20 +75,17 @@ the-beer-garden/
 ├── README.md
 │
 ├── css/
-│   ├── style.css
-│   └── responsive.css
+│   └── style.css
 │
 ├── js/
-│   └── burger-menu.js
+│   └── script.js
 │
-├── img/
-│   ├── hero-image.webp
-│   ├── beer1.webp
-│   ├── beer2.webp
-│   └── ...
-│
-└── assets/
-    └── (icônes, polices)
+└──  img/
+   ├── hero-image.jpg
+   ├── beer1.png
+   ├── beer2.png
+   └── ...
+
 ```
 ## ✨ Démonstration
 Captures d'écran<br>
